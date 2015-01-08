@@ -1,2 +1,9 @@
-- @photos.each do |photo|
-	%h2= link_to photo.title, photo
+#photos.transitions-enable
+	- @photos.each do |photo|
+		.box.panel.panel-default
+			= link_to (image_tag photo.image.url), photo
+			.panel-body
+				%h2= link_to photo.title, photo
+				%p.user
+				Submitted by
+				= photo.user.email

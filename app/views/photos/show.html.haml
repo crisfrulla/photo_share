@@ -1,10 +1,21 @@
-%h1= @photo.title
-%p= @photo.description
-%p
-Submitted by
-= @photo.user.email
-
-%br/
-= link_to "Back", root_path
-= link_to "Edit", edit_photo_path
-= link_to "Delete", photo_path, method: :delete, data: { confirm: "Are you sure?" }
+#photo_show.row
+	.col-md8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.photo_image
+				= image_tag @photo.image.url
+			.panel-body
+				%h1= @photo.title
+				%p.description= @photo.description
+				%p
+				Submitted by
+				= @photo.user.email
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+							Submitted by
+							= @photo.user.email
+					.col-md-6
+						.btn-group.pull-right
+							= link_to "Edit", edit_photo_path, class: "btn btn-default"
+							= link_to "Delete", photo_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"				
