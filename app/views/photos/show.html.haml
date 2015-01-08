@@ -1,6 +1,10 @@
 %h1= @photo.title
 %p= @photo.description
+%p
+Submitted by
+= @photo.user.email
 
+%br/
 = link_to "Back", root_path
 = link_to "Edit", edit_photo_path
 = link_to "Delete", photo_path, method: :delete, data: { confirm: "Are you sure?" }
