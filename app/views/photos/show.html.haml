@@ -5,8 +5,18 @@
 				= image_tag @photo.image.url
 			.panel-body
 				%h1= @photo.title
+				%ul
+					%li.photo-setting 
+					F/Stop:
+					= @photo.fstop 
+					%li.photo-setting
+					Shutter Speed:
+					= @photo.speed 
+					%li.photo-setting
+					ISO:
+					= @photo.iso
 				%p.description= @photo.description
-				%p
+				%p.small
 				Submitted by
 				= @photo.user.email
 			.panel-footer
@@ -17,5 +27,6 @@
 							= @photo.user.email
 					.col-md-6
 						.btn-group.pull-right
-							= link_to "Edit", edit_photo_path, class: "btn btn-default"
-							= link_to "Delete", photo_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"				
+							- if user_signed_in?
+								= link_to "Edit", edit_photo_path, class: "btn btn-default"
+								= link_to "Delete", photo_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"

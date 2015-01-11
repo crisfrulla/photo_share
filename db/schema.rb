@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 20150108195759) do
 
   create_table "photos", force: true do |t|
     t.string   "title"
+    t.string   "fstop"
+    t.string   "speed"
+    t.string   "iso"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"

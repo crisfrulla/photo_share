@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
 	before_action :find_photo, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@photos = Photo.all.order("created_at DESC")
@@ -42,7 +43,7 @@ class PhotosController < ApplicationController
 	private
 
 	def photo_params
-		params.require(:photo).permit(:title, :description, :image)
+		params.require(:photo).permit(:title, :description, :fstop, :speed, :iso, :image)
 	end
 
 	def find_photo

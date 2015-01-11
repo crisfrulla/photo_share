@@ -22,15 +22,25 @@ body {
 	background: #E9E9E9;
 }
 
+/*Reset Safari User Agent Styles*/
+* {
+	-webkit-padding-start: 0px;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 100;
 }
-
+a {
+	color: #000;
+}
+a:hover {
+	color: #000;
+}
 nav {
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 	.navbar-brand {
 		a {
-			color: #BD1E23;
+			color: #000;
 			font-weight: bold;
 			&:hover {
 				text-decoration: none;
@@ -100,6 +110,19 @@ nav {
 			line-height: 1.75;
 			margin: 0;
 		}
+
+		.photo-setting{
+		}
+		
+		ul li{
+			display: block;
+			color: #868686;
+			margin: 0px 0px 0px 0px;
+			padding: 0px;
+			list-style-type: none;
+		}
+		li{
+		}
 	}
 	.panel-footer {
 		padding: 20px 35px;
@@ -114,4 +137,41 @@ nav {
 
 textarea {
 	min-height: 250px;
+}
+
+.btn-primary{
+	background-color: #000;
+	color: white;
+	border-color: #000;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+color: white;
+background-color: #222121;
+border-color: #222121;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-control:focus {
+  border-color: #000;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
 }
